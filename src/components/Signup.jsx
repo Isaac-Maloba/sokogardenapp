@@ -42,6 +42,10 @@ const Signup = () => {
             setPassword("");
             setPhoneNumber("");
 
+             setTimeout(() => {
+                setSuccess("");
+             },5000);
+
         }
         catch(error){
             // Set loading back to default
@@ -55,9 +59,9 @@ const Signup = () => {
     <div className='row justify-content-center mt-4'>
         <div className="card col-md-6 shadow p-4">
             <h1 className='text-primary'>Sign Up</h1>
-            <h5 className="text-warning-emphasis">{loading}</h5>
-            <h3 className="text-success">{success}</h3>
-            <h4 className="text-danger">{error}</h4>
+            <h5 className="text-info">{loading}</h5>
+            <h5 className="text-success">{success}</h5>
+            <h5 className="text-danger">{error}</h5>
 
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder='Enter your Username' className='form-control' 
