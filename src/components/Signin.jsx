@@ -36,6 +36,10 @@ const Signin = () => {
       if(response.data.user){
         // If user is there, definitely the details entered during the signin are correct
         // setSuccess("Login Successful")
+
+        // Store user details in local storage
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+
         // If login is successful, the the user nbe redirected to another page
         navigate("/")
       }
